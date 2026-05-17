@@ -1,0 +1,13 @@
+# ComfyUI Models Manifest with Smart Contextual Search Links
+# Format: absolute_path_to_subfolder | filename | HF_search_link
+# --------------------------------------------------------------------------------
+/workspace/runpod-slim/ComfyUI/models/florence2/base | pytorch_model.bin | https://huggingface.co/models?search=florence2%20base%20pytorch_model.bin
+/workspace/runpod-slim/ComfyUI/models/florence2/base | model.safetensors | https://huggingface.co/models?search=florence2%20base%20model.safetensors
+/workspace/runpod-slim/ComfyUI/models/grounding-dino | groundingdino_swint_ogc.safetensors | https://huggingface.co/models?search=grounding-dino%20groundingdino_swint_ogc.safetensors
+/workspace/runpod-slim/ComfyUI/models/RMBG/SDMatte | SDMatte.safetensors | https://huggingface.co/models?search=RMBG%20SDMatte%20SDMatte.safetensors
+/workspace/runpod-slim/ComfyUI/models/RMBG/segformer_clothes | model.safetensors | https://huggingface.co/models?search=RMBG%20segformer_clothes%20model.safetensors
+/workspace/runpod-slim/ComfyUI/models/RMBG/segformer_face | model.safetensors | https://huggingface.co/models?search=RMBG%20segformer_face%20model.safetensors
+/workspace/runpod-slim/ComfyUI/models/RMBG/RMBG-2.0 | model.safetensors | https://huggingface.co/models?search=RMBG%20RMBG-2.0%20model.safetensors
+/workspace/runpod-slim/ComfyUI/models/text_encoders | qwen_3_8b_fp8mixed.safetensors | https://huggingface.co/models?search=qwen_3_8b_fp8mixed.safetensors
+/workspace/runpod-slim/ComfyUI/models/vae | flux2-vae.safetensors | https://huggingface.co/models?search=flux2-vae.safetensors
+/workspace/runpod-slim/ComfyUI/models/diffusion_models | flux-2-klein-9b-fp8mixed.safetensors | https://huggingface.co/models?search=flux-2-klein-9b-fp8mixed.safetensors
