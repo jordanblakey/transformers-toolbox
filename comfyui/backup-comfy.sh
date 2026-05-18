@@ -24,16 +24,28 @@ else
     echo "⚠️ Warning: $MANIFEST_SCRIPT not found. Skipping manifest generation."
 fi
 
+echo "Generating a fresh snapshot of installed custom nodes..."
+# Execute the snapshot generation using the system python inside ComfyUI's directory
+python custom_nodes/ComfyUI-Manager/cm-cli.py save-snapshot
+
 echo "Packing up ComfyUI custom configurations..."
 
 # 2. Create a clean archive of just the essentials
+# We include custom_nodes/ but explicitly exclude everything in it EXCEPT the snapshots folder.
+# We also forcefully block hidden model extensions (*.safetensors, *.ckpt, *.bin) just in case.
 tar -cf - \
     --exclude='models/*' \
     --exclude='venv/*' \
-    custom_nodes/ \
+    --exclude='*.safetensors' \
+    --exclude='*.ckpt' \
+    --exclude='*.bin' \
+    --exclude='custom_nodes/*/*' \
+    --exclude='custom_nodes/*' \
+    --anchored \
+    custom_nodes/ComfyUI-Manager/snapshots/ \
     output/ \
     input/ \
-    user/ | pv -s $(du -sb custom_nodes/ output/ input/ user/ --exclude='models/*' --exclude='venv/*' | awk '{total += $1} END {print total}') | gzip > /workspace/runpod-slim/comfy_essential_backup.tar.gz
+    user/ | pv -s $(du -sb output/ input/ user/ custom_nodes/ComfyUI-Manager/snapshots/ 2>/dev/null | awk '{total += $1} END {print total}') | gzip > /workspace/runpod-slim/comfy_essential_backup.tar.gz
     
 echo ""
 echo "Backup complete!"
