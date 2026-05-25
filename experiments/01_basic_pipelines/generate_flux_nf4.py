@@ -9,8 +9,8 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 
 model_id = "black-forest-labs/FLUX.2-klein-4B"
 output_path = "./outputs/"
-prompt = "A cute 3d render of a kitten, highly detailed, 8k resolution"
-filename = "cute_flux_kitten_4bit.png"
+prompt = "A cute 3d render of a puppy, highly detailed, 8k resolution"
+filename = "cute_flux_puppy_4bit.png"
 
 def main():
     print(f"Initializing official PipelineQuantizationConfig for bitsandbytes...")
